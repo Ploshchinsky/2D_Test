@@ -11,10 +11,14 @@ public class SwordVisual : MonoBehaviour
     [SerializeField] Sword _sword;
 
     private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
+    private Camera _mainCamera;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _mainCamera = Camera.main;
     }
 
     private void Start()
@@ -26,4 +30,5 @@ public class SwordVisual : MonoBehaviour
     {
         _animator.SetTrigger(ATTACK);
     }
+
 }

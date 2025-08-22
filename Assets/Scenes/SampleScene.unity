@@ -1351,6 +1351,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1327791296}
     m_Modifications:
+    - target: {fileID: 8612028303565085140, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085140, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085140, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085140, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085140, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085140, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085140, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085141, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085141, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612028303565085141, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8612028303793749410, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
       propertyPath: m_Name
       value: Sword
