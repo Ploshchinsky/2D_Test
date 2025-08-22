@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class SwordVisual : MonoBehaviour
 {
     private const string ATTACK = "Attack";
+
     [SerializeField] Sword _sword;
 
     private Animator _animator;

@@ -84,7 +84,6 @@ public class PlayerFollowingCamera : MonoBehaviour
         if (GameInput.Instance != null)
         {
             _gameInput = GameInput.Instance;
-            Debug.Log($"GameInput for following camera founded! {_gameInput}");
         }
         else
         {
@@ -97,7 +96,6 @@ public class PlayerFollowingCamera : MonoBehaviour
         if (Player.Instance != null)
         {
             _player = Player.Instance;
-            Debug.Log($"Player for following camera founded! {_player}");
         }
         else
         {
