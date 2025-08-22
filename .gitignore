@@ -1,0 +1,10 @@
+/[Ll]ibrary/
+/[Ll]ogs/
+/[Oo]bj/
+/[Pp]ackages/
+/[Pp]rojectSettings/
+/[Uu]serSettings/
+/[Ll]ibrary/
+
+# tmp-файлы гита
+*.orig

@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace UtilsCollection
+{
+    public static class Utils
+    {
+        public static Vector3 GetRandomDirection()
+        {
+            return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        }
+
+    }
+
+}
