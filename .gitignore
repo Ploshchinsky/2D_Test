@@ -5,6 +5,7 @@
 /[Pp]rojectSettings/
 /[Uu]serSettings/
 /[Ll]ibrary/
+/[Tt]emp/
 
 # tmp-файлы гита
 *.orig
