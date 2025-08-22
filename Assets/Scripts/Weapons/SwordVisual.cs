@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SwordVisual : MonoBehaviour
+{
+    private const string ATTACK = "Attack";
+    [SerializeField] Sword _sword;
+
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        _sword.OnSwordAttack += SwordVisual_onSwordAttack;
+    }
+
+    private void SwordVisual_onSwordAttack(object sender, System.EventArgs e)
+    {
+        _animator.SetTrigger(ATTACK);
+    }
+}

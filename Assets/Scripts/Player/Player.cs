@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D _rb;
     private GameInput _gameInput;
+    private ActiveWeapon _activeWeapon;
 
     public State CurrentState { get { return _currentState; } }
     public static Player Instance { get; private set; }
@@ -40,13 +41,15 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _currentState = State.Idle;
+        _activeWeapon = ActiveWeapon.Instance;
         _gameInput = GameInput.Instance;
         _gameInput.OnPlayerAttack += GameInput_OnPlayerAttack;
     }
 
     private void GameInput_OnPlayerAttack(object sender, EventArgs e)
     {
-        Debug.Log("LMB pressed => Player Listen");
+        Sword weapon = _activeWeapon.getActiveWeapon();
+        weapon.Attack();
     }
 
     private void Update()

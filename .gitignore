@@ -6,6 +6,7 @@
 /[Uu]serSettings/
 /[Ll]ibrary/
 /[Tt]emp/
+*.vs
 
 # tmp-файлы гита
 *.orig
