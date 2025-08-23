@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="154">
+	<SoundBanks>
+		<SoundBank Id="3157003241" Type="User" GUID="{D0D4B37E-A12A-4929-BA8D-C4F0ABAC433C}" Language="SFX" Hash="{FEC75175-F81A-BEB7-12B1-5D0E2723952A}">
+			<ObjectPath>\SoundBanks\Default Work Unit\TEST</ObjectPath>
+			<ShortName>TEST</ShortName>
+			<Path>TEST.bnk</Path>
+			<Media>
+				<File Id="53518913" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>TEST\Bird Fiery Necked Nightjar Contact calls - medium.wav</ShortName>
+					<Path>Media/53518913.wem</Path>
+					<CachePath>CC/{CC9F0985-17E0-E3B3-A753-14A52FB5EB9F}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="25579138" Name="TEST_Play" ObjectPath="\Events\Default Work Unit\TEST\TEST_Play" GUID="{C9C530ED-333B-430E-AB23-7D9E5182360C}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="53518913"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="668592092" Name="TEST_Stop" ObjectPath="\Events\Default Work Unit\TEST\TEST_Stop" GUID="{0212BADC-92A7-41A2-B824-709145D681BB}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{E4383081-5F1B-078C-73C0-56C8F108106E}</FileHash>
+</SoundBanksInfo>

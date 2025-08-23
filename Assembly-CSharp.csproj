@@ -1128,9 +1128,25 @@
       <Project>{CE500740-AE34-C05E-67DC-9AC07F5465FB}</Project>
       <Name>NavMeshPlus</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.AddressableInstaller.csproj">
-      <Project>{2122465A-533F-52A7-7EDA-EFF667082A0F}</Project>
-      <Name>AK.Wwise.Unity.AddressableInstaller</Name>
+    <ProjectReference Include="AK.Wwise.Unity.API.csproj">
+      <Project>{E86DC8D2-5CF0-5BED-0416-37459940C8A3}</Project>
+      <Name>AK.Wwise.Unity.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.csproj">
+      <Project>{84993F9A-0538-1326-0C22-E601383CD9B2}</Project>
+      <Name>AK.Wwise.Unity.MonoBehaviour</Name>
+    </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.ProjectDatabase.csproj">
+      <Project>{EC1D1AA5-1F47-4357-9843-5459DBCB7404}</Project>
+      <Name>AK.Wwise.Unity.ProjectDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.AddressableUpdater.csproj">
+      <Project>{7CB77868-83D1-FDE2-E704-D2F1EC6C3CB0}</Project>
+      <Name>AK.Wwise.Unity.AddressableUpdater</Name>
+    </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.Utilities.csproj">
+      <Project>{90938663-B977-675C-3B40-DC94D3767698}</Project>
+      <Name>AK.Wwise.Unity.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="Ak.Wwise.Api.WAAPI.csproj">
       <Project>{F5CF3D7B-F2AC-005F-1925-E04CF7E79209}</Project>
@@ -1140,41 +1156,25 @@
       <Project>{9BE9C2D3-DE68-49EA-B3D5-D00AAA394A10}</Project>
       <Name>AK.Wwise.Unity.API.WwiseTypes</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.ProjectDatabase.csproj">
-      <Project>{EC1D1AA5-1F47-4357-9843-5459DBCB7404}</Project>
-      <Name>AK.Wwise.Unity.ProjectDatabase</Name>
+    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.Editor.csproj">
+      <Project>{4726CD39-5CE3-59C5-E170-F5CE8D81C351}</Project>
+      <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.API.csproj">
-      <Project>{E86DC8D2-5CF0-5BED-0416-37459940C8A3}</Project>
-      <Name>AK.Wwise.Unity.API</Name>
-    </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.AddressableUpdater.csproj">
-      <Project>{7CB77868-83D1-FDE2-E704-D2F1EC6C3CB0}</Project>
-      <Name>AK.Wwise.Unity.AddressableUpdater</Name>
+    <ProjectReference Include="AK.Wwise.Unity.AddressableInstaller.csproj">
+      <Project>{2122465A-533F-52A7-7EDA-EFF667082A0F}</Project>
+      <Name>AK.Wwise.Unity.AddressableInstaller</Name>
     </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.Editor.csproj">
       <Project>{3836A744-9AF9-FBCC-4E23-B8E8F50106F4}</Project>
       <Name>AK.Wwise.Unity.API.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.Utilities.csproj">
-      <Project>{90938663-B977-675C-3B40-DC94D3767698}</Project>
-      <Name>AK.Wwise.Unity.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.Timeline.csproj">
-      <Project>{3CBEE8B5-FA9B-EBBC-1342-5B32D7E304AD}</Project>
-      <Name>AK.Wwise.Unity.Timeline</Name>
-    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.Timeline.Editor.csproj">
       <Project>{FC6B6F8E-0CF7-69E6-0CBB-B71F1C355A8F}</Project>
       <Name>AK.Wwise.Unity.Timeline.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.Editor.csproj">
-      <Project>{4726CD39-5CE3-59C5-E170-F5CE8D81C351}</Project>
-      <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.csproj">
-      <Project>{84993F9A-0538-1326-0C22-E601383CD9B2}</Project>
-      <Name>AK.Wwise.Unity.MonoBehaviour</Name>
+    <ProjectReference Include="AK.Wwise.Unity.Timeline.csproj">
+      <Project>{3CBEE8B5-FA9B-EBBC-1342-5B32D7E304AD}</Project>
+      <Name>AK.Wwise.Unity.Timeline</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

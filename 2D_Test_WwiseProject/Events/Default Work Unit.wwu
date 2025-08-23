@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{333D8E45-844C-43D0-9256-5ED6CFD3D9BA}" SchemaVersion="123">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{333D8E45-844C-43D0-9256-5ED6CFD3D9BA}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{333D8E45-844C-43D0-9256-5ED6CFD3D9BA}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="TEST" ID="{5A7197B4-1B3E-4880-84C7-901B150A0703}" ShortID="188365452">
+					<ChildrenList>
+						<Event Name="TEST_Stop" ID="{0212BADC-92A7-41A2-B824-709145D681BB}">
+							<ChildrenList>
+								<Action Name="" ID="{442A7B59-9FA0-4F23-B37D-5E10FB3B77EA}" ShortID="902766823">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb" ID="{67015522-2D19-4FDC-9B97-69F3456C666D}" WorkUnitID="{9EE902D7-B54B-4F00-B170-3F2C5306129D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TEST_Play" ID="{C9C530ED-333B-430E-AB23-7D9E5182360C}">
+							<ChildrenList>
+								<Action Name="" ID="{F6DAE5E1-0BFF-4273-B488-C4FC99FB99C3}" ShortID="258109932">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb" ID="{67015522-2D19-4FDC-9B97-69F3456C666D}" WorkUnitID="{9EE902D7-B54B-4F00-B170-3F2C5306129D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{052D6F69-0E45-4572-9544-EA03CD38D842}" ShortID="993192911">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8BF1C30A-AFAE-40FB-ACD2-51D1CB3D79B1}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb" ID="{67015522-2D19-4FDC-9B97-69F3456C666D}" WorkUnitID="{9EE902D7-B54B-4F00-B170-3F2C5306129D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayMovementSound" ID="{F17B4549-5F21-450B-BA5D-70B5EB392516}"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
