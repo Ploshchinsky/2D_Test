@@ -13,11 +13,9 @@ public class SwordVisual : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Camera _mainCamera;
-    private TrailRenderer _swordTrailParticles;
 
     private void Awake()
     {
-        _swordTrailParticles = GetComponent<TrailRenderer>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _mainCamera = Camera.main;
@@ -33,17 +31,9 @@ public class SwordVisual : MonoBehaviour
         _animator.SetTrigger(ATTACK);
     }
 
-    // Animation Event: начать след при атаке
-    public void AE_OnAttackStart(AnimationEvent e)
-    {
-        _swordTrailParticles.Clear(); // Очищаем старые частицы
-        _swordTrailParticles.emitting = true;
-    }
-
-    // Animation Event: остановить след
     public void AE_OnAttackEnd(AnimationEvent e)
     {
-        _swordTrailParticles.emitting = false;
+        _sword.SwordColliderSwitch(false);
     }
 
 }
