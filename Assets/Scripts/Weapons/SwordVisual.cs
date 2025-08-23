@@ -36,7 +36,6 @@ public class SwordVisual : MonoBehaviour
     // Animation Event: начать след при атаке
     public void AE_OnAttackStart(AnimationEvent e)
     {
-        Debug.Log($"AE_OnAttackStart: {e.stringParameter}");
         _swordTrailParticles.Clear(); // Очищаем старые частицы
         _swordTrailParticles.emitting = true;
     }
@@ -44,7 +43,6 @@ public class SwordVisual : MonoBehaviour
     // Animation Event: остановить след
     public void AE_OnAttackEnd(AnimationEvent e)
     {
-        Debug.Log($"AE_OnAttackEnd: {e.stringParameter}");
         _swordTrailParticles.emitting = false;
     }
 
