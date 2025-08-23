@@ -6,7 +6,6 @@ public class PlayerVisual : MonoBehaviour
 {
     private const string IS_RUNNING = "isRunning";
     private Animator _animator;
-    private SpriteRenderer _spriteRenderer;
     private Camera _mainCamera;
 
     [SerializeField] private float _bendDownScaleY = 0.88f;
@@ -16,7 +15,6 @@ public class PlayerVisual : MonoBehaviour
     {
         _mainCamera = Camera.main;
         _animator = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -25,7 +23,6 @@ public class PlayerVisual : MonoBehaviour
         GameInput gameInput = GameInput.Instance;
 
         HandleIsMovingState(player, gameInput);
-        HandlePLayerFacingDirection(gameInput, player);
         HandleBendDown(player);
     }
 
@@ -42,14 +39,5 @@ public class PlayerVisual : MonoBehaviour
                     : new Vector3(transform.localScale.x, _normalScaleY, transform.localScale.z);
     }
 
-    private void HandlePLayerFacingDirection(GameInput gameInput, Player player)
-    {
-        Vector3 mouseVector = gameInput.GetMousePosition();
-        Vector3 playerVector = _mainCamera.WorldToScreenPoint(player.transform.position);
-
-        float mouseX = mouseVector.x;
-        float playerX = playerVector.x;
-
-        _spriteRenderer.flipX = mouseX <= playerX;
-    }
+    
 }

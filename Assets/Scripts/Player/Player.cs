@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rb;
     private GameInput _gameInput;
     private ActiveWeapon _activeWeapon;
+    private Camera _mainCamera;
 
     public State CurrentState { get { return _currentState; } }
     public static Player Instance { get; private set; }
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
     {
         Instance = this;
         _rb = GetComponent<Rigidbody2D>();
+        _mainCamera = Camera.main;
         StateSpeedsInit();
     }
 
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         UpdateInputDataForPlayerPosition();
+        HandlePLayerFacingDirection(_gameInput, this);
     }
 
 
@@ -98,6 +101,21 @@ public class Player : MonoBehaviour
         _statesSpeed.Add(State.BendDown, _bendDownSpeed);
         _statesSpeed.Add(State.Run, _runningSpeed);
         _statesSpeed.Add(State.Walk, _walkingSpeed);
+    }
+
+    private void HandlePLayerFacingDirection(GameInput gameInput, Player player)
+    {
+        Transform playerTransform = player.transform;
+
+        // Получаем экранные координаты мыши и игрока
+        Vector3 mouseScreenPos = gameInput.GetMousePosition();
+        Vector3 playerScreenPos = _mainCamera.WorldToScreenPoint(playerTransform.position);
+
+        // Определяем направление поворота
+        bool shouldFlip = mouseScreenPos.x < playerScreenPos.x;
+
+        // Устанавливаем поворот (только по Y оси)
+        playerTransform.rotation = Quaternion.Euler(0, shouldFlip ? 180f : 0f, 0);
     }
 
 }
