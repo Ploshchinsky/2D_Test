@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7326382105518946719}
   - component: {fileID: 7326382105518946718}
-  - component: {fileID: 7326382105518946688}
+  - component: {fileID: 9065266174399584111}
   - component: {fileID: 4425317573860511685}
   - component: {fileID: 855580625}
   m_Layer: 0
@@ -248,8 +248,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &7326382105518946688
-CapsuleCollider2D:
+--- !u!61 &9065266174399584111
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -261,9 +261,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006165299, y: 0.27253482}
-  m_Size: {x: 0.9506836, y: 0.61081713}
-  m_Direction: 1
+  m_Offset: {x: 0.04121983, y: 1.2252187}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1424396, y: 2.5762808}
+  m_EdgeRadius: 0
 --- !u!195 &4425317573860511685
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -273,7 +283,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7326382105518946717}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.62
   m_Speed: 0.8
   m_Acceleration: 8
   avoidancePriority: 50
@@ -282,7 +292,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.8
+  m_Height: 2.65
   m_BaseOffset: 0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

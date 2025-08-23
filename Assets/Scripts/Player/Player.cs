@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.XR.Haptics;
 
+[SelectionBase]
 public class Player : MonoBehaviour
 {
     public enum State
