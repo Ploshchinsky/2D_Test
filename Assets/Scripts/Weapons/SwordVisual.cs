@@ -13,9 +13,11 @@ public class SwordVisual : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Camera _mainCamera;
+    private PolygonCollider2D _polygonCollider2D;
 
     private void Awake()
     {
+        _polygonCollider2D = GetComponent<PolygonCollider2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _mainCamera = Camera.main;
@@ -29,11 +31,30 @@ public class SwordVisual : MonoBehaviour
     private void SwordVisual_onSwordAttack(object sender, System.EventArgs e)
     {
         _animator.SetTrigger(ATTACK);
+        SwordColliderSwitch(true);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out EnemyEntity enemyEntity))
+        {
+            Debug.Log($"Sword find enemy {enemyEntity}");
+            enemyEntity.TakeDamage(_sword.DamageValue);
+        }
+        else
+        {
+            Debug.Log("Sword not found enemy");
+        }
     }
 
     public void AE_OnAttackEnd(AnimationEvent e)
     {
-        _sword.SwordColliderSwitch(false);
+        SwordColliderSwitch(false);
+    }
+
+    public void SwordColliderSwitch(bool switchOn)
+    {
+        _polygonCollider2D.enabled = switchOn;
     }
 
 }
