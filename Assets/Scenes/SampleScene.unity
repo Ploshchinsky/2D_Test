@@ -267,6 +267,24 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &472642135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7326382105473731939, guid: b9072204b56a8db4e94001d2086aa73b, type: 3}
+  m_PrefabInstance: {fileID: 7326382106366649936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &472642139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472642135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975470cee1462e64785dd9ceb65fd504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyAI: {fileID: 855580625}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +720,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7326382105518946719, guid: b9072204b56a8db4e94001d2086aa73b, type: 3}
   m_PrefabInstance: {fileID: 7326382106366649936}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &855580625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 855580625, guid: b9072204b56a8db4e94001d2086aa73b, type: 3}
+  m_PrefabInstance: {fileID: 7326382106366649936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069b01415403f494f8d7b3ff5760e8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &986628457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1180,6 +1209,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 783004598}
     m_Modifications:
+    - target: {fileID: 855580625, guid: b9072204b56a8db4e94001d2086aa73b, type: 3}
+      propertyPath: _isChasingEnemy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 855580629, guid: b9072204b56a8db4e94001d2086aa73b, type: 3}
       propertyPath: _maxHealth
       value: 100
@@ -1194,7 +1227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7326382105518946719, guid: b9072204b56a8db4e94001d2086aa73b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 7326382105518946719, guid: b9072204b56a8db4e94001d2086aa73b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1355,6 +1388,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1327791296}
     m_Modifications:
+    - target: {fileID: 141400447, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8612028303793749410, guid: 9a698a8dfdf9a5248b3b9cb72c5d53dd, type: 3}
       propertyPath: m_Name
       value: Sword
