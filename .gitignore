@@ -7,7 +7,5 @@
 /[Ll]ibrary/
 /[Tt]emp/
 .vs/
-Assembly-CSharp.csproj
-/Assets/Scenes/SampleScene.unity
 # tmp-файлы гита
 *.orig

@@ -74,10 +74,15 @@
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Weapons\ActiveWeapon.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <Compile Include="Assets\Scripts\ScriptableObjects\EnemyMovementParams.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\EnemyStats.cs" />
 >>>>>>> 82610b1c697fffd1b1585387122735edb0b67c48
+=======
+    <Compile Include="Assets\Scripts\ScriptableObjects\EnemyMovementParams.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\EnemyStats.cs" />
+>>>>>>> 48fd8d6a43d6dd10551cdd53eba5caa85d8527db
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
