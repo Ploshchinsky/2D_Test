@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
     private State GetCurrentState(GameInput gameInput)
     {
         if (gameInput.isBendDown()) return State.BendDown;
-        if (gameInput.isFastRunning()) return State.Run;
+        if (gameInput.isFastRunning() && CheckIsWalking(_inputVector.x, _inputVector.y)) return State.Run;
         if (CheckIsWalking(_inputVector.x, _inputVector.y)) return State.Walk;
 
         return State.Idle;

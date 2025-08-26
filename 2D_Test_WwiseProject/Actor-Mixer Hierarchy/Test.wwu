@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9EE902D7-B54B-4F00-B170-3F2C5306129D}" SchemaVersion="123" RootDocumentID="{B8BDABFE-E09A-47D0-84D5-EE8EA04BE6AD}" ParentDocumentID="{B8BDABFE-E09A-47D0-84D5-EE8EA04BE6AD}">
+	<AudioObjects>
+		<WorkUnit Name="Test" ID="{9EE902D7-B54B-4F00-B170-3F2C5306129D}" OwnerID="{B8BDABFE-E09A-47D0-84D5-EE8EA04BE6AD}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="amb" ID="{67015522-2D19-4FDC-9B97-69F3456C666D}" ShortID="674665149">
+					<PropertyList>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>42</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="IsStreamingEnabled" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>32</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>530</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C8BDE35A-622D-4EAC-BF91-672BF4505116}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C60C4998-63B9-415B-9B0C-FA3D9A7D8997}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Bird Fiery Necked Nightjar Contact calls - medium" ID="{979D4EF7-1D77-4241-AA5F-A3967C63C38E}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="1515.608"/>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.632278048431459"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.00420631221467"/>
+								<Property Name="LoopBegin" Type="Real64" Value="3.23577589491394"/>
+								<Property Name="LoopEnd" Type="Real64" Value="13.9101166331597"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="1.11578479134963"/>
+								<Property Name="TrimEnd" Type="Real64" Value="16.141686215859"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>TEST\Bird Fiery Necked Nightjar Contact calls - medium.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="53518913"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{134AE371-1F6D-4400-AE80-4F41F362D974}"/>
+					</PositioningInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="Bird Fiery Necked Nightjar Contact calls - medium" ID="{979D4EF7-1D77-4241-AA5F-A3967C63C38E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<WorkUnit Name="Test_Movement" ID="{AB13AADF-4C3C-4192-846E-8D0367A73914}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
