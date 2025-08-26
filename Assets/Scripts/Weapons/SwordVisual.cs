@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class SwordVisual : MonoBehaviour
@@ -28,22 +24,13 @@ public class SwordVisual : MonoBehaviour
         _sword.OnSwordAttack += SwordVisual_onSwordAttack;
     }
 
-    private void SwordVisual_onSwordAttack(object sender, System.EventArgs e)
-    {
-        _animator.SetTrigger(ATTACK);
-        SwordColliderSwitch(true);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out EnemyEntity enemyEntity))
         {
-            Debug.Log($"Sword find enemy {enemyEntity}");
+            Debug.Log("Player's Sword find enemy!");
             enemyEntity.TakeDamage(_sword.DamageValue);
-        }
-        else
-        {
-            Debug.Log("Sword not found enemy");
+            return;
         }
     }
 
@@ -55,6 +42,12 @@ public class SwordVisual : MonoBehaviour
     public void SwordColliderSwitch(bool switchOn)
     {
         _polygonCollider2D.enabled = switchOn;
+    }
+
+    private void SwordVisual_onSwordAttack(object sender, System.EventArgs e)
+    {
+        _animator.SetTrigger(ATTACK);
+        SwordColliderSwitch(true);
     }
 
 }

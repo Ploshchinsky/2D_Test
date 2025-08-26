@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879402fa99b5bfe4da85979f38fcbeee, type: 3}
+  m_Name: SkeletonMovements
+  m_EditorClassIdentifier: 
+  isRoamingEnemy: 1
+  RoamingDistanceMax: 8
+  RoamingDistanceMin: 1
+  RoamingTimerMax: 2
+  IsChasingEnemy: 1
+  ChasingDistance: 7.5
+  ChasingSpeedFactor: 2
+  IsAttackingEnemy: 1
+  AttackDistance: 2.8
+  AttackCooldown: 4

@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UtilsCollection;
+
+[RequireComponent(typeof(NavMeshAgent), typeof(BoxCollider2D), typeof(CapsuleCollider2D))]
 public class EnemyAI : MonoBehaviour
 {
     private enum State
@@ -9,121 +11,234 @@ public class EnemyAI : MonoBehaviour
         Idle,
         Roaming,
         Chasing,
-        Attack,
+        Attacking,
         Death
     }
 
     [SerializeField] private State _startState = State.Roaming;
+    private State _currentState;
+
+    [SerializeField] private EnemyMovementParams _movementsParams;
 
     //Roaming Settings
-    [SerializeField] private float _roamingDistanceMax = 8.0f;
-    [SerializeField] private float _roamingDistanceMin = 1.0f;
-    [SerializeField] private float _roamingTimerMax = 2.0f;
+    private float _currentRoamingTimer;
+    private float _currentMovingSpeed;
+    private Vector3 _targetRoamingPosition;
 
     //Chasing Settings
-    [SerializeField] private bool _isChasingEnemy = false;
-    [SerializeField] private float _chasingDistance = 4f;
-    [SerializeField] private float _chasingSpeedFactor = 2f;
-
-    private float _movingSpeed;
     private float _chasingSpeed;
 
+    //Atack Settings
+    private float _attackCooldownTimer = 0f;
+
     private NavMeshAgent _navMeshAgent;
-    private State _currentState;
-    private Vector3 _targetRoamingPosition;
-    private float _currentRoamingTimer;
+    private BoxCollider2D _boxCollider2D;
+    private CapsuleCollider2D _capsuleCollider2D;
+    private Player _player;
+
+    public event EventHandler OnEnemyAttack;
+    public event EventHandler OneEnemyDeath;
+
+    public float ChasingSpeedFactor { get => _movementsParams.ChasingSpeedFactor; }
 
     private void Awake()
     {
+        _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        _boxCollider2D = GetComponent<BoxCollider2D>();
+
         _currentState = _startState;
-        _currentRoamingTimer = 0;
+        _currentRoamingTimer = _movementsParams.RoamingTimerMax;
 
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.updateRotation = false;
         _navMeshAgent.updateUpAxis = false;
 
-        _movingSpeed = _navMeshAgent.speed;
-        _chasingSpeed = _movingSpeed * _chasingSpeedFactor;
+        _currentMovingSpeed = _navMeshAgent.speed;
+        _chasingSpeed = _currentMovingSpeed * _movementsParams.ChasingSpeedFactor;
     }
+
+    private void Start()
+    {
+        _player = Player.Instance;
+    }
+
     private void Update()
     {
         StateHandler();
+        UpdateFacingDirection();
+    }
+
+
+    public bool isMoving()
+    {
+        return _navMeshAgent.velocity != Vector3.zero;
+    }
+
+    public bool isAttacking()
+    {
+        return _currentState == State.Attacking;
+    }
+
+    public void setDeath()
+    {
+        OneEnemyDeath.Invoke(this, EventArgs.Empty);
+        UpdateDeathState();
     }
 
     private void StateHandler()
     {
-        UpdateState();
         switch (_currentState)
         {
-            default:
+            case State.Idle:
+                UpdateIdleState();
+                break;
             case State.Roaming:
-                _currentRoamingTimer += Time.deltaTime;
-                if (_currentRoamingTimer >= _roamingTimerMax)
-                {
-                    Roaming();
-                    _currentRoamingTimer = 0;
-                }
+                UpdateRoamingState();
                 break;
             case State.Chasing:
+                UpdateChasingState();
                 break;
-            case State.Attack: break;
-            case State.Death: break;
-            case State.Idle: break;
+            case State.Attacking:
+                UpdateAttackingState();
+                break;
+            case State.Death:
+                UpdateDeathState();
+                break;
         }
     }
 
-    private void UpdateState()
+    private void UpdateIdleState()
     {
-        if (_isChasingEnemy)
-        {
-            Player player = Player.Instance;
-            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-
-            if (distanceToPlayer <= _chasingDistance)
-            {
-                Debug.Log($"Enemy START chasing player! Distance={distanceToPlayer}");
-                _navMeshAgent.ResetPath();
-                _navMeshAgent.SetDestination(player.transform.position);
-                _navMeshAgent.speed = _chasingSpeed;
-
-                _currentState = State.Chasing;
-                return;
-            }
-
-            if (distanceToPlayer > _chasingDistance && _currentState == State.Chasing)
-            {
-                Debug.Log($"Enemy STOP chasing player! Distance={distanceToPlayer}");
-                _currentState = State.Roaming;
-                _navMeshAgent.speed = _movingSpeed;
-                _currentRoamingTimer = 0;
-                return;
-            }
-            return;
-        }
-
-        if (!_isChasingEnemy)
+        if (_movementsParams.isRoamingEnemy)
         {
             _currentState = State.Roaming;
             return;
         }
     }
 
+    private void UpdateRoamingState()
+    {
+        // Логика блуждания
+        _currentRoamingTimer += Time.deltaTime;
+        if (_currentRoamingTimer >= _movementsParams.RoamingTimerMax)
+        {
+            _currentRoamingTimer = 0;
+            Roaming();
+        }
+
+        // Переход из Roaming в Chasing
+        float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
+        if (_movementsParams.IsChasingEnemy && distanceToPlayer <= _movementsParams.ChasingDistance)
+        {
+            _currentState = State.Chasing;
+            Debug.Log($"Enemy START chasing player! Distance={distanceToPlayer}");
+            return;
+        }
+    }
+
+    private void UpdateChasingState()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
+
+        // Преследование игрока
+        _navMeshAgent.SetDestination(_player.transform.position);
+        _navMeshAgent.speed = _chasingSpeed;
+
+        // Переход из Chasing в Attacking
+        if (_movementsParams.IsAttackingEnemy && distanceToPlayer <= _movementsParams.AttackDistance)
+        {
+            _currentState = State.Attacking;
+            _attackCooldownTimer = _movementsParams.AttackCooldown;
+            Debug.Log($"Enemy START attacking! Distance={distanceToPlayer}");
+            return;
+        }
+
+        // Переход из Chasing в Roaming
+        if (distanceToPlayer > _movementsParams.ChasingDistance)
+        {
+            _currentState = State.Roaming;
+            _navMeshAgent.ResetPath();
+            Debug.Log($"Enemy STOP chasing player! Distance={distanceToPlayer}");
+            return;
+        }
+    }
+
+    private void UpdateAttackingState()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
+
+        // Остановиться при атаке
+        _navMeshAgent.ResetPath();
+
+        // КД атаки
+        _attackCooldownTimer += Time.deltaTime;
+        if (_attackCooldownTimer >= _movementsParams.AttackCooldown)
+        {
+            _attackCooldownTimer = 0;
+            AttackPlayer();
+        }
+
+        // Переход из Attacking в Chasing
+        if (distanceToPlayer > _movementsParams.AttackDistance)
+        {
+            _currentState = State.Chasing;
+            Debug.Log($"Enemy STOP attacking! Distance={distanceToPlayer}");
+            return;
+        }
+    }
+
+    private void AttackPlayer()
+    {
+        // Логика атаки
+        _currentState = State.Attacking;
+        OnEnemyAttack.Invoke(this, EventArgs.Empty);
+    }
+
+    private void UpdateDeathState()
+    {
+        // Логика смерти
+        _boxCollider2D.enabled = false;
+        _capsuleCollider2D.enabled = false;
+        _navMeshAgent.ResetPath();
+        _currentState = State.Death;
+
+    }
+
     private void Roaming()
     {
-        float randomDistance = UnityEngine.Random.Range(_roamingDistanceMin, _roamingDistanceMax);
+        float randomDistance = UnityEngine.Random.Range(_movementsParams.RoamingDistanceMin, _movementsParams.RoamingDistanceMax);
         _targetRoamingPosition = transform.position + (Utils.GetRandomDirection() * randomDistance);
-        ChangeFacingDirection(transform.position, _targetRoamingPosition);
         _navMeshAgent.SetDestination(_targetRoamingPosition);
     }
 
-    private void ChangeFacingDirection(Vector3 sourcePosition, Vector3 targetPosition)
+    private void UpdateFacingDirection()
     {
-        transform.rotation = Quaternion.Euler(0, sourcePosition.x > targetPosition.x ? -180 : 0, 0);
+        if (_navMeshAgent.hasPath && _navMeshAgent.remainingDistance > 0.1f)
+        {
+            // Получаем следующую точку на пути
+            Vector3 nextPathPoint = _navMeshAgent.steeringTarget;
+
+            // Определяем направление к следующей точке
+            Vector3 directionToNextPoint = (nextPathPoint - transform.position).normalized;
+
+            ChangeFacingDirection(directionToNextPoint);
+        }
     }
 
-    public bool isMoving()
+    private void ChangeFacingDirection(Vector3 targetDirection)
     {
-        return _navMeshAgent.velocity != Vector3.zero;
+        // Проекция на плоскость XZ для 3D или использование только X для 2D-style
+        Vector3 flattenedDirection = new Vector3(targetDirection.x, 0, targetDirection.z).normalized;
+
+        if (flattenedDirection.magnitude > 0.1f)
+        {
+            // Для 2D-style (только по X)
+            if (Mathf.Abs(flattenedDirection.x) > 0.5f)
+            {
+                bool shouldFaceLeft = flattenedDirection.x < 0;
+                transform.rotation = Quaternion.Euler(0, shouldFaceLeft ? 180f : 0f, 0);
+            }
+        }
     }
 
 }

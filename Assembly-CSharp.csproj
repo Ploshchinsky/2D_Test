@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Skeleton\EnemyEntity.cs" />
     <Compile Include="Assets\PlayerInputActions\PlayerInputActions.cs" />
+    <Compile Include="Assets\Scripts\Skeleton\EnemyVisual.cs" />
     <Compile Include="Assets\Scripts\Skeleton\Slime.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerVisual.cs" />
     <Compile Include="Assets\Scripts\GameInput.cs" />
@@ -71,7 +72,8 @@
     <Compile Include="Assets\Scripts\Skeleton\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Weapons\ActiveWeapon.cs" />
-    <Compile Include="Assets\Scripts\Skeleton\EnemyVisual.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\EnemyMovementParams.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\EnemyStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
