@@ -58,19 +58,19 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Skeleton\EnemyEntity.cs" />
     <Compile Include="Assets\PlayerInputActions\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\Skeleton\Slime.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerVisual.cs" />
     <Compile Include="Assets\Scripts\GameInput.cs" />
     <Compile Include="Assets\Scripts\Weapons\Sword.cs" />
     <Compile Include="Assets\Scripts\Weapons\SwordVisual.cs" />
+    <Compile Include="Assets\Scripts\Weapons\VFX_SwordSlash.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerFollowingCamera.cs" />
     <Compile Include="Assets\Scripts\Skeleton\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Weapons\ActiveWeapon.cs" />
-    <Compile Include="Assets\Scripts\Weapons\VFX_SwordSlash.cs" />
-    <Compile Include="Assets\Scripts\Skeleton\EnemyEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
