@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	25579138	TEST_Play			\Default Work Unit\TEST\TEST_Play	
+	668592092	TEST_Stop			\Default Work Unit\TEST\TEST_Stop	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	53518913	Bird Fiery Necked Nightjar Contact calls - medium	D:\2D\2D_Test\2D_Test_WwiseProject\.cache\CC\{CC9F0985-17E0-E3B3-A753-14A52FB5EB9F}.wem	53518913.wem	\Actor-Mixer Hierarchy\Default Work Unit\Test\Bird Fiery Necked Nightjar Contact calls - medium	
+
