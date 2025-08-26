@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7326382105473731940}
   - component: {fileID: 7326382105473731941}
   - component: {fileID: 7326382105473731942}
+  - component: {fileID: 472642139}
   m_Layer: 0
   m_Name: SkeletonVisual
   m_TagString: Untagged
@@ -191,6 +192,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &472642139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326382105473731939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975470cee1462e64785dd9ceb65fd504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyAI: {fileID: 855580625}
+  _enemyEntity: {fileID: 855580629}
 --- !u!1 &7326382105518946717
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,11 +217,12 @@ GameObject:
   - component: {fileID: 7326382105518946719}
   - component: {fileID: 7326382105518946718}
   - component: {fileID: 9065266174399584111}
+  - component: {fileID: 7881671449010303065}
   - component: {fileID: 4425317573860511685}
   - component: {fileID: 855580625}
   - component: {fileID: 855580629}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,6 +291,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1424396, y: 2.5762808}
   m_EdgeRadius: 0
+--- !u!60 &7881671449010303065
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326382105518946717}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.471891, y: 2.529935}
+      - {x: 1.1371655, y: 2.6375177}
+      - {x: 1.9686265, y: 2.1883075}
+      - {x: 1.7271771, y: 1.3135504}
+      - {x: 0.5865936, y: 1.1589938}
+      - {x: -0.0413242, y: 0.87759924}
+      - {x: 0.7140031, y: 0.49204278}
+      - {x: 1.610734, y: 0.49493206}
+      - {x: 2.3832507, y: 0.55679584}
+      - {x: 2.9227638, y: 0.79059505}
+      - {x: 3.5203776, y: 1.4007679}
+      - {x: 3.3087783, y: 2.136062}
 --- !u!195 &4425317573860511685
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -309,10 +362,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069b01415403f494f8d7b3ff5760e8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startState: 1
-  roamingDistanceMax: 4
-  roamingDistanceMin: 1
-  roamingTimerMax: 1
+  _startState: 1
+  _roamingDistanceMax: 2
+  _roamingDistanceMin: 1
+  _roamingTimerMax: 4.5
+  _isChasingEnemy: 1
+  _chasingDistance: 7.5
+  _chasingSpeedFactor: 2
+  _isAttackingEnemy: 1
+  _attackDistance: 2.4
+  _attackCooldown: 3
 --- !u!114 &855580629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,4 +384,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603785697f9e46442bcf64d113e49b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1
+  _maxHealth: 100

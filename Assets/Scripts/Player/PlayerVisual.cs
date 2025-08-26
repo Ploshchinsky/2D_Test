@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
 {
+    private const string IS_IDLE = "isIdle";
+    private const string IS_WALKING = "isWalking";
     private const string IS_RUNNING = "isRunning";
+
     private Animator _animator;
     private Camera _mainCamera;
 
@@ -22,14 +25,15 @@ public class PlayerVisual : MonoBehaviour
         Player player = Player.Instance;
         GameInput gameInput = GameInput.Instance;
 
-        HandleIsMovingState(player, gameInput);
+        HandlePlayerMovingAnimation(player, gameInput);
         HandleBendDown(player);
     }
 
-    private void HandleIsMovingState(Player player, GameInput gameInput)
+    private void HandlePlayerMovingAnimation(Player player, GameInput gameInput)
     {
-        Vector2 gameInputVector = gameInput.GetMovementVector();
-        _animator.SetBool(IS_RUNNING, player.CheckIsWalking(gameInputVector.x, gameInputVector.y));
+        _animator.SetBool(IS_IDLE, player.CurrentState.Equals(Player.State.Idle));
+        _animator.SetBool(IS_WALKING, player.CurrentState.Equals(Player.State.Walk));
+        _animator.SetBool(IS_RUNNING, player.CurrentState.Equals(Player.State.Run));
     }
 
     private void HandleBendDown(Player player)
