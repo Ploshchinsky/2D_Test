@@ -10,10 +10,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{19ED52C9-61D3-2847-A13B-3A555153F0E3}</ProjectGuid>
+    <ProjectGuid>{8D823A25-783B-9B04-1101-7DFA92F028D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.Mathematics</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -27,7 +27,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,7 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -58,26 +58,98 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Skeleton\EnemyEntity.cs" />
-    <Compile Include="Assets\PlayerInputActions\PlayerInputActions.cs" />
-    <Compile Include="Assets\Scripts\Skeleton\EnemyVisual.cs" />
-    <Compile Include="Assets\Scripts\Skeleton\Slime.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerVisual.cs" />
-    <Compile Include="Assets\Scripts\GameInput.cs" />
-    <Compile Include="Assets\Scripts\Weapons\Sword.cs" />
-    <Compile Include="Assets\Scripts\Weapons\SwordVisual.cs" />
-    <Compile Include="Assets\Scripts\Weapons\VFX_SwordSlash.cs" />
-    <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\PlayerFollowingCamera.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObjects\EnemyMovementParams.cs" />
-    <Compile Include="Assets\Scripts\Skeleton\EnemyAI.cs" />
-    <Compile Include="Assets\Scripts\Utils.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObjects\EnemyStats.cs" />
-    <Compile Include="Assets\Scripts\Weapons\ActiveWeapon.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float4x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint4x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int4x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int2x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Il2CppEagerStaticClassConstructionAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int3x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double4x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint2x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\noise4D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Geometry\Plane.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\classicnoise3D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\cellular2x2x2.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int4x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint4x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double3x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double2x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool3x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float4x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\PropertyAttributes.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\noise3D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint3x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool2x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\matrix.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\half4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint2x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\rigid_transform.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double2x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int3x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\cellular3D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double2x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint3x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\matrix.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float3x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Properties\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\math_unity_conversion.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float2x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\half.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Geometry\MinMaxAABB.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float3x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\half3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\quaternion.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint3x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double3x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\math.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool3x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int2x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool4x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\psrdnoise2D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool4x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool3x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\cellular2x2.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\common.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\half2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint4x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double4x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\classicnoise4D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double4x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int4x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\cellular2D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\classicnoise2D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float3x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\noise3Dgrad.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool4x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int2x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool2x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double3x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float4x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Noise\noise2D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\bool2x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float2x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\double4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\int3x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float2x3.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\random.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint2x2.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\uint4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\float2.gen.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\StreamingAssets\desc.txt" />
-    <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\ProjectInfo.xml" />
+    <None Include="Library\PackageCache\com.unity.mathematics@1.2.6\Unity.Mathematics\Unity.Mathematics.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -408,8 +480,44 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.45f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.45f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.45f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.2\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.2\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.YamlDotNet">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.2\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.2\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -902,237 +1010,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="NavMeshPlusEditor.csproj">
-      <Project>{7B8E839A-6EA7-7975-2DA6-F35881A86B31}</Project>
-      <Name>NavMeshPlusEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
-      <Project>{D0C1A318-44C2-9372-F05F-41BCC9F02CBE}</Project>
-      <Name>Unity.InternalAPIEngineBridge.001</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{652CE3A1-7620-7A8B-695F-8D3371E21A92}</Project>
-      <Name>Unity.VSCode.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.PixelPerfect.csproj">
-      <Project>{53D5A369-CE08-3FCF-C9BB-B600B5DCE07A}</Project>
-      <Name>Unity.2D.PixelPerfect</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.csproj">
-      <Project>{392B1DF4-8969-8BE6-208E-FC3D872C3A3F}</Project>
-      <Name>Unity.RenderPipelines.Universal.Shaders</Name>
-    </ProjectReference>
-    <ProjectReference Include="PsdPlugin.csproj">
-      <Project>{911DEB76-602B-9A81-CB28-0278BD898FEA}</Project>
-      <Name>PsdPlugin</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{A4FC48FB-765F-0A9A-D612-95650907C741}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshPlus.csproj">
-      <Project>{CE500740-AE34-C05E-67DC-9AC07F5465FB}</Project>
-      <Name>NavMeshPlus</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
-      <Project>{F90DD30D-AFE4-8E82-7211-A1C6364E487F}</Project>
-      <Name>Unity.VisualScripting.State.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Searcher.Editor.csproj">
-      <Project>{745DAA62-64BE-ECCB-6692-85427369CE99}</Project>
-      <Name>Unity.Searcher.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.IK.Editor.csproj">
-      <Project>{FE9AC7B0-F5C5-00AF-53F2-2267B21BA9B7}</Project>
-      <Name>Unity.2D.IK.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Path.Editor.csproj">
-      <Project>{F242E62B-6868-7D5F-58A7-1A294BE49E57}</Project>
-      <Name>Unity.2D.Path.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
-      <Project>{09A4EFDB-1F48-27C0-AC87-F873B0946613}</Project>
-      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{AD85E8F3-0E4E-89BE-6C1A-61A6DCE9C291}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.csproj">
-      <Project>{029F22F6-FCE5-C9EB-26E0-7A4803493924}</Project>
-      <Name>Unity.InputSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{A4D616E2-7A11-BC5B-6C3D-6C1066F5D2FC}</Project>
-      <Name>Unity.Rider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
-      <Project>{D3794583-8DFA-C195-57E8-C1CADF8D9E81}</Project>
-      <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{CEBD7091-85D5-3A3F-8B94-118FBC88C229}</Project>
       <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
-      <Project>{357AFFFB-250F-CBC2-028A-E3895D0E9ADB}</Project>
-      <Name>Unity.2D.IK.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
-      <Project>{1D92883B-2B05-5DEF-0BAB-4832F355D1E9}</Project>
-      <Name>Unity.ShaderGraph.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Aseprite.Editor.csproj">
-      <Project>{3F21B9EC-8D87-E77F-E874-07AB13A28DA9}</Project>
-      <Name>Unity.2D.Aseprite.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.csproj">
-      <Project>{805D5E2F-1756-AA9E-397F-9241969D103A}</Project>
-      <Name>Unity.RenderPipeline.Universal.ShaderLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
-      <Project>{376D28F6-8738-F3B9-BD83-29F52C3AB261}</Project>
-      <Name>Unity.Mathematics.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
-      <Project>{1BF1A1DE-FE4B-2267-C475-ED900E0A0E82}</Project>
-      <Name>Unity.2D.Common.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
-      <Project>{2B69672D-8254-BA84-9C43-9CC0B633B528}</Project>
-      <Name>Unity.VisualScripting.Flow.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{1C7B40CF-AFF7-1685-1189-A3869110080E}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
-      <Project>{E1767D8A-9F56-34C9-9AE7-3BEF547A0F95}</Project>
-      <Name>Unity.2D.Animation.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
-      <Project>{94A51D49-D7B2-3ED3-A8A4-693E4AC1B35C}</Project>
-      <Name>Unity.2D.Tilemap.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj">
-      <Project>{AF00C140-126C-48FA-D013-03249ADDB4C1}</Project>
-      <Name>Unity.RenderPipelines.Universal.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="PPv2URPConverters.csproj">
-      <Project>{E6232DEA-A0A4-3B3E-F695-895515886E55}</Project>
-      <Name>PPv2URPConverters</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
-      <Project>{D16E8D57-F284-0F72-2F86-ABB9CAC90566}</Project>
-      <Name>Unity.VisualStudio.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{2A4129B4-F877-6123-DE07-265AA81C0067}</Project>
-      <Name>Unity.Timeline</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
-      <Project>{2709B3C0-0101-D17E-2D69-F1143ABCDC8F}</Project>
-      <Name>Unity.VisualScripting.Core.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{F5075A70-76B4-F521-BC79-6F7C14603761}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Burst.Editor.csproj">
-      <Project>{1448D5EB-33A4-0685-4421-A5C2580F630E}</Project>
-      <Name>Unity.Burst.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
-      <Project>{68656E1B-4564-E29F-F985-E8E7201EF712}</Project>
-      <Name>Unity.2D.Sprite.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj">
-      <Project>{48E9BCEF-F4ED-D538-0EDC-C0FC34EED62F}</Project>
-      <Name>Unity.2D.Psdimporter.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
-      <Project>{B3639B70-6944-3F43-4730-CF2AD5A8C4EA}</Project>
-      <Name>Unity.InternalAPIEditorBridge.001</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
-      <Project>{8E658219-B787-36D9-8B01-1E38C21EBEA6}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
-      <Project>{B3EAA3D5-230E-F1B5-725B-2BAF1E54A771}</Project>
-      <Name>Unity.VisualScripting.Flow</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{EBD79BBB-DF1F-26B1-6C68-4D0E4D10CFAD}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
-      <Project>{2871D605-04E3-0788-5865-DBB0B0A7ABAB}</Project>
-      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.csproj">
-      <Project>{31B277B6-2F4B-DB11-BE8E-CCF4DFA12406}</Project>
-      <Name>Unity.VisualScripting.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.csproj">
-      <Project>{8D823A25-783B-9B04-1101-7DFA92F028D8}</Project>
-      <Name>Unity.Mathematics</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Burst.csproj">
-      <Project>{52687637-DD9C-A1BC-183F-CEEB03E66A36}</Project>
-      <Name>Unity.Burst</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
-      <Project>{4533B050-6EDD-132C-D506-C16A2C20C709}</Project>
-      <Name>Unity.RenderPipelines.Universal.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
-      <Project>{9D90D4A8-49C7-60C2-3E39-DC290D2FD325}</Project>
-      <Name>Unity.VisualScripting.Shared.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.ForUI.csproj">
-      <Project>{61B59E2D-5553-404A-2095-F04598F788BF}</Project>
-      <Name>Unity.InputSystem.ForUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
-      <Project>{AC4B0C00-C674-ADB4-17B6-44EBFADA914E}</Project>
-      <Name>Unity.2D.Animation.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.PixelPerfect.Editor.csproj">
-      <Project>{F5FD8C06-EA44-8DD7-48D1-4935EA65FD57}</Project>
-      <Name>Unity.2D.PixelPerfect.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
-      <Project>{5F6B191E-08D0-2C4D-CBD4-96D0BC044E98}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{ECA70D00-D5CF-D427-9C0D-515DEF2C5E9B}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Aseprite.Common.csproj">
-      <Project>{86D82526-C9E3-D737-7B0F-69019349DB36}</Project>
-      <Name>Unity.2D.Aseprite.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
-      <Project>{4B96DD2B-51B4-31A6-0B5E-CBB457C780A8}</Project>
-      <Name>Unity.2D.Common.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
-      <Project>{A7DF35E7-6A14-4104-546F-3F787722610E}</Project>
-      <Name>Unity.2D.SpriteShape.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
-      <Project>{DB39C227-E8D7-2EDF-C5E9-F110776608FE}</Project>
-      <Name>Unity.RenderPipelines.Core.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
-      <Project>{C4784AF8-AA7D-5B33-2502-D37D2DACEA2F}</Project>
-      <Name>Unity.2D.SpriteShape.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.csproj">
-      <Project>{1C540631-76E0-E238-DCC5-C683A3549D21}</Project>
-      <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

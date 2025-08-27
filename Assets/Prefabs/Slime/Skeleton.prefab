@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7326382105518946719}
   - component: {fileID: 7326382105518946718}
+  - component: {fileID: 5377122812366221824}
   - component: {fileID: 9065266174399584111}
   - component: {fileID: 7881671449010303065}
   - component: {fileID: 4425317573860511685}
@@ -265,6 +266,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!70 &5377122812366221824
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326382105518946717}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.028266095, y: 0.15546305}
+  m_Size: {x: 1.2826596, y: 0.6890747}
+  m_Direction: 1
 --- !u!61 &9065266174399584111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -363,15 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startState: 1
-  _roamingDistanceMax: 2
-  _roamingDistanceMin: 1
-  _roamingTimerMax: 4.5
-  _isChasingEnemy: 1
-  _chasingDistance: 7.5
-  _chasingSpeedFactor: 2
-  _isAttackingEnemy: 1
-  _attackDistance: 2.4
-  _attackCooldown: 3
+  _movementsParams: {fileID: 11400000, guid: 0ee570aa03d474343a429bb846a9ecd6, type: 2}
 --- !u!114 &855580629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,4 +393,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603785697f9e46442bcf64d113e49b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _enemyAI: {fileID: 855580625}
+  Stats: {fileID: 11400000, guid: 6be6d8f32b60f3045afd566a8b036e77, type: 2}

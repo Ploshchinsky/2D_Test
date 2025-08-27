@@ -1,2 +1,0 @@
-ebat ego rot
-ggggg
